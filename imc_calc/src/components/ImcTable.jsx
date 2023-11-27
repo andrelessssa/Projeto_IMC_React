@@ -1,12 +1,17 @@
-import { data } from "../data/data"
 
-const ImcTable = ({ data }) => {
+
+import Button from './Button';
+import { data } from '/src/data/data.js';
+import './ImcTable.css'
+
+
+const ImcTable = ({ data, imc, info, infoClass, resetCalc }) => {
   return <div id="result-container">
     <p id="imc-number">
-      seu Imc:
+      Seu Imc: <span className={infoClass}>{imc}</span> 
     </p>
-    <p id="imc-info">
-      Sitiação atual:
+    <p id="imc-info"> 
+      Sitiação atual: <span className={infoClass}>{info}</span> 
     </p>
     <h3>Confira as Classificações:</h3>
     <div id="imc-table">
@@ -21,9 +26,10 @@ const ImcTable = ({ data }) => {
           <p>{item.info}</p>
           <p>{item.obesity}</p>
         </div>
-      ))}
 
+      ))}
     </div>
+    <Button id="back-btn" text="Voltar" action={resetCalc}/>
   </div>
 }
 

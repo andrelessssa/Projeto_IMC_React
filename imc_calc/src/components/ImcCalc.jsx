@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Button from "./Button";
 import "./ImcCalc.css";
+import { data } from '/src/data/data.js';
 
 const ImcCalc = ({calcImc}) => {
     const [height, setHeight] = useState("");

@@ -35,3 +35,4 @@ const data = [
       obesity: "III",
     },
   ];
+  export { data };
