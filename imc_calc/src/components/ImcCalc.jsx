@@ -3,7 +3,7 @@ import { useState } from "react";
 import Button from "./Button";
 import "./ImcCalc.css";
 
-const ImcCalc = () => {
+const ImcCalc = ({calcImc}) => {
     const [height, setHeight] = useState("");
     const [weight, setWeight] = useState("");
 
@@ -46,7 +46,7 @@ const ImcCalc = () => {
                     onChange={(e) => handleWeightChange(e)} value={weight} />
                 </div>
                 <div className="action-control">
-                    <Button id="calc-btn" text="Calcular"/>
+                    <Button id="calc-btn" text="Calcular" action={(e) => calcImc(e, height, weight)}/>
                     <Button id="clear-btn" text="Limpar" action={clearForm}/>
                     
                 </div>
