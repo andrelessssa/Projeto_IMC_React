@@ -22,7 +22,7 @@ function App() {
    data.forEach((item) => {
     if (impResult >= item.min && impResult <= item.max) {
         setInfo(item.info)
-        setInfoClass(item.infoClass)
+        setClassification(item.classification)
     }
 });
    if (!info) return;
@@ -34,14 +34,14 @@ function App() {
     e.preventDefault();
     setImc("");
     setInfo("");
-    setInfoClass("");
+    setClassification("");
   }
 
   const [imc, setImc] = useState("");
   const [info, setInfo] = useState("");
-  const [infoClass, setInfoClass] = useState("");
+  const [classification, setClassification] = useState("");
 
-  return  <div className='container'> {!imc ? <ImcCalc calcImc={calcImc}/> : <ImcTable data={data} imc={imc} info={info} infoClass={infoClass} resetCalc={resetCalc}/> }</div>
+  return  <div className='container'> {!imc ? <ImcCalc calcImc={calcImc}/> : <ImcTable data={data} imc={imc} info={info} classification={classification} resetCalc={resetCalc}/> }</div>
    
   
 }
